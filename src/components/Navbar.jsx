@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, GraduationCap } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/logo.jpg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,12 +40,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo & School Name */}
-          <a href="#home" className="flex items-center gap-2 group">
-            <div className={`p-2 rounded-lg transition-colors ${
-              isScrolled ? 'bg-school-600 text-white' : 'bg-white text-school-800'
-            }`}>
-              <GraduationCap className="h-6 w-6" />
-            </div>
+          <a href="#home" className="flex items-center gap-3 group">
+            <img
+              src={logo}
+              alt="SD Public School Logo"
+              className="h-12 w-12 object-contain bg-white rounded-full p-0.5 border border-school-200 shadow-md group-hover:scale-105 transition-transform duration-300"
+            />
             <div className="flex flex-col">
               <span className={`font-bold text-lg sm:text-xl tracking-tight transition-colors duration-300 ${
                 isScrolled ? 'text-school-900' : 'text-white'

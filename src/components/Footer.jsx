@@ -1,5 +1,6 @@
 import React from 'react';
-import { GraduationCap, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
+import logo from '../assets/logo.jpg';
 
 export default function Footer() {
   const quickLinks = [
@@ -23,10 +24,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand details */}
           <div className="space-y-4">
-            <a href="#home" className="flex items-center gap-2">
-              <div className="p-2 bg-white text-school-950 rounded-lg w-fit">
-                <GraduationCap className="h-6 w-6" />
-              </div>
+            <a href="#home" className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="SD Public School Logo"
+                className="h-12 w-12 object-contain bg-white rounded-full p-0.5 border border-school-800 shadow-md"
+              />
               <span className="font-bold text-lg sm:text-xl tracking-tight text-white">
                 SD PUBLIC SCHOOL
               </span>
