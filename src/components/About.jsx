@@ -81,9 +81,8 @@ export default function About() {
                   className="relative w-64 h-64 md:w-72 md:h-72 object-cover rounded-2xl shadow-lg"
                 />
               </div>
-              <h4 className="font-bold text-xl text-school-950 mt-4 mb-1 text-center">Dr. Arpit Sharma</h4>
+              <h4 className="font-bold text-xl text-school-950 mt-4 mb-1 text-center">Mr. Neeraj Yadav</h4>
               <p className="text-sm font-semibold text-school-600 uppercase tracking-wider text-center">Principal, SD Public School</p>
-              <p className="text-xs text-gray-500 mt-1">Ph.D. in Education, M.Sc.</p>
             </div>
 
             {/* Principal's Message text */}
@@ -99,7 +98,7 @@ export default function About() {
               </p>
               <div className="pt-2">
                 <span className="font-semibold text-school-900 block text-lg">Warm Regards,</span>
-                <span className="font-serif text-2xl text-school-600 block mt-1 tracking-wider">Dr. Arpit Sharma</span>
+                <span className="font-serif text-2xl text-school-600 block mt-1 tracking-wider">Mr. Neeraj Yadav</span>
               </div>
             </div>
           </div>
