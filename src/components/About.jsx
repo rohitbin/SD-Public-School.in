@@ -1,6 +1,6 @@
 import React from 'react';
 import { Target, Eye, Award } from 'lucide-react';
-import principalImage from '../assets/principal.png';
+import principalImage from '../assets/principal.jpg';
 
 export default function About() {
   return (
