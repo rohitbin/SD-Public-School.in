@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import schoolCampus from '../assets/school_campus.jpg';
+import schoolGround from '../assets/school_ground.jpg';
+import schoolAerial from '../assets/school_aerial.jpg';
 
 export default function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [schoolCampus, schoolGround, schoolAerial];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4500); // Slide transition interval: 4.5 seconds
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   // Check if admissions are open (March to June inclusive: month 2 to 5)
   const today = new Date();
   const month = today.getMonth(); // 0 is Jan, 2 is March, 5 is June
@@ -14,15 +26,20 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Slideshow with Cross-Fade & Scale Effects */}
       <div className="absolute inset-0">
-        <img
-          src={schoolCampus}
-          alt="SD Public School Campus"
-          className="w-full h-full object-cover scale-105 animate-fade-in"
-          style={{ animationDuration: '2s' }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-school-950/90 via-school-900/70 to-transparent"></div>
+        {slides.map((slide, index) => (
+          <img
+            key={index}
+            src={slide}
+            alt={`SD Public School Campus Slide ${index + 1}`}
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+            }`}
+          />
+        ))}
+        {/* Gradient Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-school-950/95 via-school-900/75 to-transparent"></div>
       </div>
 
       {/* Hero Content */}
@@ -65,8 +82,24 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Slide Navigation Dots */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? 'bg-school-400 w-8'
+                : 'bg-white/40 hover:bg-white/70'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+
       {/* Decorative Wave Bottom Cut */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none z-10"></div>
     </section>
   );
 }
