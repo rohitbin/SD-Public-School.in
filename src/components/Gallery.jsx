@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Camera, Image as ImageIcon } from 'lucide-react';
-import schoolCampus from '../assets/school_campus.png';
+import schoolCampus from '../assets/school_campus.jpg';
 
 export default function Gallery() {
   const [filter, setFilter] = useState('all');

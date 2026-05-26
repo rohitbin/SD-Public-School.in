@@ -1,5 +1,5 @@
 import React from 'react';
-import schoolCampus from '../assets/school_campus.png';
+import schoolCampus from '../assets/school_campus.jpg';
 
 export default function Hero() {
   // Check if admissions are open (March to June inclusive: month 2 to 5)
