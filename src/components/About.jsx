@@ -1,6 +1,7 @@
 import React from 'react';
 import { Target, Eye, Award } from 'lucide-react';
 import principalImage from '../assets/principal.jpg';
+import vicePrincipalImage from '../assets/vice_principal.png';
 
 export default function About() {
   return (
@@ -99,6 +100,42 @@ export default function About() {
               <div className="pt-2">
                 <span className="font-semibold text-school-900 block text-lg">Warm Regards,</span>
                 <span className="font-serif text-2xl text-school-600 block mt-1 tracking-wider">Mr. Neeraj Yadav</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Vice Principal's Message */}
+        <div className="bg-school-50 rounded-3xl p-8 md:p-12 border border-school-100 shadow-sm mt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            {/* Vice Principal's Image */}
+            <div className="lg:col-span-1 flex flex-col items-center">
+              <div className="relative group">
+                <div className="absolute -inset-2 bg-gradient-to-tr from-school-600 to-school-300 rounded-2xl blur opacity-35 group-hover:opacity-60 transition duration-300"></div>
+                <img
+                  src={vicePrincipalImage}
+                  alt="Vice Principal portrait"
+                  className="relative w-64 h-64 md:w-72 md:h-72 object-cover rounded-2xl shadow-lg"
+                />
+              </div>
+              <h4 className="font-bold text-xl text-school-950 mt-4 mb-1 text-center">Mrs. Shalini Singh</h4>
+              <p className="text-sm font-semibold text-school-600 uppercase tracking-wider text-center">Vice Principal, SD Public School</p>
+            </div>
+
+            {/* Vice Principal's Message text */}
+            <div className="lg:col-span-2 space-y-6">
+              <h3 className="text-2xl font-bold text-school-900 border-b border-school-200 pb-3">
+                Vice Principal's Message
+              </h3>
+              <blockquote className="text-gray-700 italic leading-relaxed text-lg relative pl-6 border-l-4 border-school-500">
+                "Education is the progressive discovery of our own ignorance. At SD Public School, our endeavor is to provide a platform that enables students to pursue their passions, develop self-discipline, and appreciate diversity. We aim to build critical thinkers who ask questions, investigate answers, and contribute positively to our global community."
+              </blockquote>
+              <p className="text-gray-650 leading-relaxed">
+                Through strong collaborative partnerships between our educators, support staff, and parents, we maintain an atmosphere of continuous improvement. We ensure that our co-curricular workshops, STEM activities, and sports matches go hand in hand with core academic lessons to shape well-rounded personalities.
+              </p>
+              <div className="pt-2">
+                <span className="font-semibold text-school-900 block text-lg">Warm Regards,</span>
+                <span className="font-serif text-2xl text-school-600 block mt-1 tracking-wider">Mrs. Shalini Singh</span>
               </div>
             </div>
           </div>
